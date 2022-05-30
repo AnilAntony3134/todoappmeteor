@@ -1,14 +1,14 @@
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
-import { TasksCollection } from '../imports/api/TasksCollection';
+import { TasksCollection } from '../imports/db/TasksCollection';
+import '../imports/api/TaskMethods';
+import '../imports/api/tasksPublications';
 
 const insertTask = taskText => TasksCollection.insert({ 
   text: taskText,
   userId : user._id,
   CreatedAt: new Date(),
 });
-
-
 
 const SEED_USERNAME = 'Anil'
 const SEED_PASSWORD = '1234'
